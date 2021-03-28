@@ -25,6 +25,8 @@ def output():
         result = predict(file)
         file.save('app/static/uploaded_images/'+file.filename)
         return render_template('output.html', label = result, image=file.filename)
+    else:
+        return "Please upload an image"
 
 def predict(image):
     loaded_model = model_from_json(loaded_model_json)
