@@ -23,8 +23,8 @@ def output():
     if file:
         # Call the model and return the output to output.html here
         result = predict(file)
-
-    return render_template('output.html', label = result)
+        file.save('app/static/uploaded_images/'+file.filename)
+        return render_template('output.html', label = result, image=file.filename)
 
 def predict(image):
     loaded_model = model_from_json(loaded_model_json)
