@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    h1 {
+      font-family: inherit;
+    }
+  </style>
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <body style="font-family: 'Lato', sans-serif">
+    <img src="../static/img/nooks_clean_transparent.png" />
+    <h1>Upload</h1>
+    <form action="/output" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" id="actual-btn" hidden />
+      <label for="actual-btn" class="button" style="outline: none">
+        <img src="../static/img/Upload.png" />
+      </label>
+      <div id="file-chosen">No file chosen</div>
+      <br />
+      <button type="submit" class="button btn btn-primary">
+        <img src="../static/img/ContinueButton.png" />
+      </button>
+    </form>
+  </body>
+  <script>
+    // Upload photo
+    const actualBtn = document.getElementById("actual-btn");
+    const fileChosen = document.getElementById("file-chosen");
+    actualBtn.addEventListener("change", function () {
+      fileChosen.textContent = this.files[0].name;
+    });
+  </script>
+</html>
