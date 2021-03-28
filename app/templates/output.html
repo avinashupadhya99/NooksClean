@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+    rel="stylesheet"
+  />
+  <title>Nooks Clean</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <body style="font-family: 'Lato', sans-serif; padding-bottom: 50px">
+    <img src="../static/img/nooks_clean_transparent.png" />
+    <br />
+    <h1>Garbage contains:</h1>
+    {% if label == "Could not identify" %}
+    <h1 style="color: red">{{label}}</h1>
+    {% else %}
+    <h1 style="color: green">{{label}}</h1>
+    {% endif %}
+    <br />
+  </body>
+</html>

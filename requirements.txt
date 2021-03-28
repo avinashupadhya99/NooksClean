@@ -1,2 +1,6 @@
 flask
 gunicorn
+keras 
+keras-models 
+opencv-python 
+tensorflow
